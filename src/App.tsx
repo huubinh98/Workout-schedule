@@ -1,33 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { Col, Row } from 'antd'
+import Column from './components/Column'
+import Header from './components/Header'
+import { ColumnType } from './utils/enums'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <Row gutter={16} justify={"center"}>
+        <Col span={3}>
+          <Column column={ColumnType.MON} />
+        </Col>
+        <Col span={3}>
+          <Column column={ColumnType.TUE} />
+        </Col>
+        <Col span={3}>
+          <Column column={ColumnType.WED} />
+        </Col>
+        <Col span={3}>
+          <Column column={ColumnType.THU} />
+        </Col>
+        <Col span={3}>
+          <Column column={ColumnType.FIR} />
+        </Col>
+        <Col span={3}>
+          <Column column={ColumnType.SAT} />
+        </Col>
+        <Col span={3}>
+          <Column column={ColumnType.SUN} />
+        </Col>
+      </Row>
     </>
   )
 }
